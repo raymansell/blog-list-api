@@ -8,6 +8,9 @@ router
     res.json(blogs);
   })
   .post(async (req, res) => {
+    if (!req.body.title && !req.body.url) {
+      return res.status(400).end(); // return prevents further execution of function
+    }
     const blog = new Blog(req.body);
     const result = await blog.save();
     res.status(201).json(result);

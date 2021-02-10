@@ -1,10 +1,7 @@
 const http = require('http');
 const dotenv = require('dotenv');
-const connectDB = require('./config/db');
 
 dotenv.config({ path: './config/.env' });
-
-connectDB();
 
 const app = require('./app');
 const server = http.createServer(app);
