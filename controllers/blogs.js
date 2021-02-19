@@ -13,7 +13,7 @@ router
   })
   .post(async (req, res, next) => {
     if (!req.body.title && !req.body.url) {
-      return res.status(400).end(); // return prevents further execution of function
+      return res.status(400).end();
     }
     try {
       const blog = new Blog(req.body);
