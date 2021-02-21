@@ -14,9 +14,11 @@ const connectDB = async () => {
       useFindAndModify: false,
       useCreateIndex: true,
     });
-    console.log(`MongoDB connected: ${connection.connection.host}`);
+    console.log(
+      `MongoDB connected: ${connection.connection.host}`.cyan.underline.bold
+    );
   } catch (error) {
-    console.log('Error connecting to MongoDB:', error.messagse);
+    console.log(`Error connecting to MongoDB: ${error.messagse}`.red);
     process.exit(1);
   }
 };
